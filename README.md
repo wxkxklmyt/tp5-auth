@@ -55,3 +55,5 @@ KEY `uid` (`uid`),
 KEY `group_id` (`group_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 </pre>
+<h4>composer安装</h4>
+<pre>composer require wxkxklmyt/tp5-auth</pre>
