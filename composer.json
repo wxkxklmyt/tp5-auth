@@ -1,0 +1,18 @@
+{
+    "name": "wxkxklmyt/auth",
+    "description": "Thinkphp5 Auth权限认证类",
+    "authors": [
+        {
+            "name": "我的梦",
+            "email": "519468341@qq.com"
+        }
+    ],
+    "require": {
+		"php": ">=5.4.0"
+	},
+	"autoload": {
+        "psr-4": {
+            "wxkxklmyt\\": "src/"
+        }
+    }
+}
