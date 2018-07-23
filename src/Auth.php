@@ -88,9 +88,18 @@ class Auth{
         $this -> _config['AUTH_RULE'] = $prefix . $this -> _config['AUTH_RULE'];
         $this -> _config['AUTH_USER'] = $prefix . $this -> _config['AUTH_USER'];
         $this -> _config['AUTH_GROUP_ACCESS'] = $prefix . $this -> _config['AUTH_GROUP_ACCESS'];
-        if(config :: has('AUTH_CONFIG')){
-            // 可设置配置项 AUTH_CONFIG, 此配置项为数组。
-            $this -> _config = array_merge($this -> _config, Config :: get('AUTH_CONFIG'));
+		if(config :: pull('auth')){
+            /**
+			 * 配置文件名为auth.php
+			 * 格式：
+			 * return [
+			 * 'AUTH_GROUP' => 'admin_auth_group', // 用户组数据表名
+			 * 'AUTH_GROUP_ACCESS' => 'admin_auth_group_access', // 用户-用户组关系表
+			 * 'AUTH_RULE' => 'admin_auth_rule', // 权限规则表
+			 * 'AUTH_USER' => 'admin' // 管理员表
+			 * ];
+			 */
+            $this -> _config = array_merge($this -> _config, config :: pull('auth'));
         }
     }
 
